@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/560.0ecbec4c.chunk.js","mappings":"wJAAA,IAAMA,EAAa,wB","sources":["TestModule.js"],"sourcesContent":["const TestModule = 'Hello from the module!'\n\nexport { TestModule }\n"],"names":["TestModule"],"sourceRoot":""}

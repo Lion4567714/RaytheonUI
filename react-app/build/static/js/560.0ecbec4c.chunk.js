@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunktest_app=self.webpackChunktest_app||[]).push([[560],{560:function(e,t,u){u.r(t),u.d(t,{TestModule:function(){return s}});var s="Hello from the module!"}}]);
+//# sourceMappingURL=560.0ecbec4c.chunk.js.map

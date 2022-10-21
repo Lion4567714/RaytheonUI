@@ -1,42 +1,33 @@
-import React, { Component } from 'react';
-import Table from './Table';
+import React, { useEffect, useState } from "react"
 
-class App extends Component {
-    handleClick = () => {
-        import('./TestModule')
-        .then(TestModule => {
-            <h1>Test Cool</h1>
-        })
-        .catch(err => {
-            <h1>Test</h1>
-        });
-    };
+function App() {
 
-    render() {
-        const characters = [
-            {
-                name: 'Me',
-                occupation: 'None',
-            },
-            {
-                name: 'You',
-                occupation: 'A job',
-            },
-            {
-                name: 'Somebody Else',
-                occupation: 'An actual job',
-            },
-        ]
+    const [data, setData] = useState([{}])
 
-        return (
-            <div className="container">
-                <Table characterData={characters} />
-            </div>
-            // <div>
-            //     <button onClick={this.handleClick}>Load</button>
-            // </div>
+    useEffect(() => {
+        fetch("http://127.0.0.1:5000/").then(
+            result => result.json()
+        ).then(
+            data => {
+                setData(data)
+                console.log(data)
+                console.log(typeof(data))
+                console.log(typeof(data.members))
+            }
         )
-    };
+    }, [])
+
+    return (
+        <div>
+            {(typeof data.members === 'undefined') ? (
+                <p>Loading...</p>
+            ) : (
+                data.members.map((member, i) => (
+                    <p key={i}>{member}</p>
+                ))
+            )}
+        </div>
+    )
 }
 
 export default App

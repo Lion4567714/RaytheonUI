@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { Component, useEffect, useState } from "react"
 
 function App() {
 
@@ -16,6 +16,8 @@ function App() {
             }
         )
     }, [])
+
+    
 
     return (
         <div>

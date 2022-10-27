@@ -1,4 +1,8 @@
 import React, { Component } from 'react'
+import CanvasJSReact from './canvasjs.react'
+
+var CanvasJS = CanvasJSReact.CanvasJS
+var CanvasJSChart = CanvasJSReact.CanvasJSChart
 
 class App extends Component {
   state = {
@@ -9,7 +13,7 @@ class App extends Component {
   componentDidMount() {
     const url =
       //'https://en.wikipedia.org/w/api.php?action=opensearch&search=Seona+Dancing&format=json&origin=*'
-      'http://127.0.0.1:5000/'
+      'http://127.0.0.1:5000/pie'
 
     fetch(url)
       .then(res => res.json())
@@ -23,13 +27,19 @@ class App extends Component {
   render() {
     const { data } = this.state
 
-    console.log(data)
+    // console.log(data)
 
-    const result = data.map((entry, index) => {
-      return <li key={index}>{entry}</li>
-    })
+    // const result = data.map((entry, index) => {
+    //   return <li key={index}>{entry}</li>
+    // })
 
-    return <ul>{result}</ul>
+    // return <ul>{result}</ul>
+
+    return (
+      <div>
+          <CanvasJSChart options = {data}></CanvasJSChart>
+      </div>
+  )
   }
 }
 

@@ -3,7 +3,8 @@
 ### Directories 
 
 - [Flask](/flask) contains the backend component using Flask in Python.
-- [react-app](/react-app) contains the frontend component using React in JavaScript (and maybe TypeScript?).
+- [react-ts](/react-ts) contains the frontend component using React in TypeScript (please use this instead of the JavaScript version!).
+- (DEPRECATED) [react-app](/react-app) contains the frontend component using React in JavaScript.
 - [graphs-n-stuff](/graphs-n-stuff) has other Python scripts for generating plots using Pandas.
 
 ## Backend (Flask)
@@ -15,6 +16,12 @@
 
 1. `cd flask`
 2. `python3 api.py`
+
+### How to Add New Charts
+
+In [api.py](/flask/api.py), copy and paste a preexisting class under the existing classes. Then you may rename the new class and swap in your own chart data.
+
+Towards the end of the file, make sure to add the new chart like so: `api.add_resource(my_new_chart_class, '/my_new_chart')`. This will add your chart as a new route. See **How to View New Charts** for further instructions.
 
 ## Frontend (React)
 
@@ -29,6 +36,6 @@
 1. `cd react-app`
 2. `npm start`
 
-### (Temporary) Changing between Connecting to Flask and Graphs
+### How to View New Charts
 
-To change between connecting to localhost and graphing, simply open [index.js](/react-app/src/index.js), and swap the commented line between lines 10 and 11.
+After you have already added your new chart, you may change the URL in [Chart.tsx](/react-ts/src/resources/Chart.tsx) to point to your new chart on the backend server. 

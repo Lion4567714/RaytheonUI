@@ -1,0 +1,8 @@
+{
+    "title": "Some important data",
+    "quantity": 1,
+    "cool list" : {
+        "name": "This is a list",
+        "array": ["data", "some more data", "something else"]
+    }
+}

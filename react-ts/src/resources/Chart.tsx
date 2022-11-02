@@ -20,7 +20,10 @@ const Chart: React.FC = () => {
                 console.log(data);
             }
         );
-    }, []);
+    }, []); 
+    // The ', []' above tells useEffect() to only work once: when the website is first loaded.
+    // To make it run more than once, we need to put a callback or variable in the brackets.
+    // Whenever our callback or variable changes, useEffect() will be called.
 
     return (
         <div>

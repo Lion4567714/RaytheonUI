@@ -16,8 +16,8 @@ const Chart: React.FC = () => {
             result => result.json()
         ).then(
             data => {
-                setData(data);
                 console.log(data);
+                setData(data);
             }
         );
     }, []); 

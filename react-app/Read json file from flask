@@ -1,0 +1,14 @@
+from flask import Flask, request, jsonify
+app = Flask(__name__)
+
+@app.route('/', methods=['GET', 'POST']) #connect actual flask app
+def index():
+value = request.json['array'][2] #'array' is from json file
+  result = "result"
+  return jsonify ({"key" : result})
+  return 'test'
+#
+if __name__== 'main':
+  app.run(debug=True)
+  
+  #we need a json file to actully have this run

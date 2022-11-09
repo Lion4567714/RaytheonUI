@@ -12,7 +12,7 @@ const PostButton: React.FC = () => {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ MyData: "Wow this is some data through a POST request!" })
+            body: JSON.stringify({ MyData: input })
         })
         .then((response) => {
             console.log(response);

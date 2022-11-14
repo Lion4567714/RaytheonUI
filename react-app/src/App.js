@@ -1,4 +1,9 @@
 import React, { Component, useEffect, useState } from "react"
+import React, { useState } from "react";
+import logo from './logo.svg';
+import './App.css';
+import { Login } from "../../react-ts/src/Login"
+import { CreateAccount } from "../../react-ts/src/CreateAccount";
 
 function App() {
 
@@ -30,6 +35,22 @@ function App() {
             )}
         </div>
     )
+
+    const [currentForm, setCurrentForm] = useState('Login');
+
+    const toggleForm = (forName) => {
+      setCurrentForm(forName);
+    }
+  
+    return (
+      <div className="App">
+        {
+          currentForm == "login" ? <Login onFormSwitch={toggleForm}/> : <CreateAccount onFormSwitch={toggleForm} />
+        }
+  
+      </div>
+    );
+
 }
 
 export default App

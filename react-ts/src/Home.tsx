@@ -2,16 +2,14 @@ import React from 'react';
 import './index.css';
 
 import Header from './resources/Header';
-import PostButton from './resources/PostButton';
 
-const Home: React.FC = () => {
+const About: React.FC = () => {
     return (
         <div>
             <Header />
-            <p>This is the home page!</p>
-            <PostButton />
+            <img src={require('./resources/graphics/Turbofan.gif')}></img>
         </div>
     );
 };
 
-export default Home;
+export default About;

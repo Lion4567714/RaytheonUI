@@ -9,15 +9,17 @@ const Header: React.FC = () => {
         // Based off this amazing website: https://wickedblocks.dev/
         // Copying things from here will require some editing (namely class -> className), but helps otherwise
 
-        <div className="w-full max-w-7xl">
-            <div x-data="{ open: false }" className="flex flex-col max-w-screen-xl p-7 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+        <div className="w-full shadow-lg bg-gray-50">
+            <div x-data="{ open: false }" className="flex flex-col max-w-screen-xl p-7 mx-auto md:items-center md:justify-between md:px-6 lg:px-8">
                 <div className="flex flex-row items-center justify-between lg:justify-start">
-                    <a href="./" className="text-3xl tracking-tighter text-red-600 transition duration-500 ease-in-out transform tracking-relaxed lg:pr-8">
-                        <img className="inline" width="50" src={require('./raytheonSymbol.png')}></img>
+                    <a href="./" className="text-3xl tracking-tighter transition duration-900 ease-in-out transform tracking-relaxed lg:pr-8">
+                        <img className="inline" width="75" src={require('./graphics/PurdueLogo.png')}></img>
+                        <span className='px-2 text-gray-300'>|</span>
+                        <img className="inline" width="50" src={require('./graphics/RaytheonSymbol.png')}></img>
+                        <span className='px-2'> </span>
+                        <span className="text-red-600 font-extrabold">Raytheon Team 1</span>
                         <span> </span>
-                        <span className="font-extrabold">Raytheon</span>
-                        <span> </span>
-                        <span className="font-semibold">UI</span>
+                        <span className="text-red-600 font-semibold">Data-Driven Mission Readiness</span>
                     </a>
                     <button className="rounded-lg md:hidden focus:outline-none focus:shadow-outline">
                         <svg fill="currentColor" viewBox="0 0 20 20" className="w-8 h-8">
@@ -26,26 +28,20 @@ const Header: React.FC = () => {
                         </svg>
                     </button>
                 </div>
-                <nav className="flex-col flex-grow hidden md:flex md:justify-start md:flex-row">
-                    <ul className="space-y-2 list-none lg:space-y-0 lg:items-center lg:inline-flex">
-                        <li>
-                            <a href="./" className="px-2 lg:px-6 py-6 text-lg border-b-2 border-transparent hover:border-red-600 leading-[22px] md:px-3 text-gray-500 hover:text-red-500"> Home
-                            </a>
+                <nav className="flex-col flex-grow hidden lg:space-y-0 md:flex md:justify-start md:flex-row">
+                    <ul className="list-none lg:items-center inline-flex">
+                        <li className='transform hover:-translate-y-1 transition'>
+                            <a href="./" className="px-2 lg:px-6 py-6 text-lg border-b-2 border-transparent hover:border-red-600 leading-[22px] md:px-3 text-gray-500 hover:text-red-500"> Home </a>
                         </li>
-                        <li>
-                            <a href="./charts" className="px-2 lg:px-6 py-6 text-lg border-b-2 border-transparent leading-[22px] md:px-3 text-gray-500 hover:text-red-500 hover:border-red-600"> Charts </a>
+                        <li className='transform hover:-translate-y-1 transition'>
+                            <a href="./teams" className="px-2 lg:px-6 py-6 text-lg border-b-2 border-transparent hover:border-red-600 leading-[22px] md:px-3 text-gray-500 hover:text-red-500"> Teams </a>
                         </li>
-                        <li>
-                            <a href="./about" className="px-2 lg:px-6 py-6 text-lg border-b-2 border-transparent hover:border-red-600 leading-[22px] md:px-3 text-gray-500 hover:text-red-500"> About <span className="hidden lg:inline"> Us </span>
-                            </a>
+                        <li className='transform hover:-translate-y-1 transition'>
+                            <a href="./about" className="px-2 lg:px-6 py-6 text-lg border-b-2 border-transparent hover:border-red-600 leading-[22px] md:px-3 text-gray-500 hover:text-red-500"> About Us </a>
                         </li>
                     </ul>
                 </nav>
-
-
             </div>
-
-            {/* <div className="h-20 bg-gradient-to-b from-red-500 to-white-50"></div> */}
         </div>
     );
 };
